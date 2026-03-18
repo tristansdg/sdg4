@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://sdg-test.vercel.app/sitemap.xml
+Sitemap: https://www.sdgcontracts.com/sitemap.xml
 
