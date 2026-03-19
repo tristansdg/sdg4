@@ -143,8 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
       const fields = contactForm.querySelectorAll('[required]');
       let valid = true;
 
@@ -156,21 +154,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      if (!valid) return;
+      if (!valid) {
+        e.preventDefault();
+        return;
+      }
 
-      // Show success state
       const btn = contactForm.querySelector('button[type="submit"]');
-      const original = btn.textContent;
-      btn.textContent = 'Message Sent!';
-      btn.style.background = '#1f3d2b';
-      btn.disabled = true;
-
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.style.background = '';
-        btn.disabled = false;
-        contactForm.reset();
-      }, 3500);
+      if (btn) {
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+      }
     });
   }
 

@@ -197,7 +197,13 @@
         <h3 style="font-family:var(--font-head); font-size:20px; font-weight:800; margin-bottom:8px;">Send Us a Message</h3>
         <p style="font-size:14px; color:var(--gray-text); margin-bottom:28px;">Fill out the form below and we'll get back to you within 1 business day.</p>
 
-        <form class="js-contact-form" novalidate>
+        <form class="js-contact-form" action="https://formsubmit.co/Info@sdgcontracts.com" method="POST" novalidate>
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="_subject" value="New website contact form submission" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://www.sdgcontracts.com/contact.html?sent=1" />
+
           <div class="form-row">
             <div class="form-group">
               <label for="fname">First Name</label>
