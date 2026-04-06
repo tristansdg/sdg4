@@ -25,6 +25,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.sdgcontracts.com/blog.html</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.sdgcontracts.com/financing.html</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>

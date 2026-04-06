@@ -1,0 +1,36 @@
+name: "New Blog Post"
+description: "Publish a new blog post to the website"
+labels: ["blog"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## New Blog Post
+        Fill out the fields below to publish a new blog post. **The issue title above becomes your blog post title.**
+
+  - type: textarea
+    id: content
+    attributes:
+      label: "Blog Post Content"
+      description: "Write your blog post here. Use the toolbar to format text (bold, italic, headings, links). You can drag & drop images directly into this field."
+      placeholder: "Start writing your blog post..."
+    validations:
+      required: true
+
+  - type: input
+    id: featured-image
+    attributes:
+      label: "Featured Image URL (optional)"
+      description: "Paste a URL for the banner image at the top of your post. You can also embed images in the content above by dragging & dropping."
+      placeholder: "https://example.com/my-image.jpg"
+    validations:
+      required: false
+
+  - type: input
+    id: excerpt
+    attributes:
+      label: "Short Description"
+      description: "A 1-2 sentence summary that appears on the blog listing page."
+      placeholder: "What this post is about in one or two sentences..."
+    validations:
+      required: true
