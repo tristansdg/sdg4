@@ -195,11 +195,21 @@
       </div>
 
       <!-- Form -->
-      <div class="contact-form fade-up">
-        <h3 style="font-family:var(--font-head); font-size:20px; font-weight:800; margin-bottom:8px;">Send Us a Message</h3>
-        <p style="font-size:14px; color:var(--gray-text); margin-bottom:28px;">Fill out the form below and we'll get back to you within 1 business day.</p>
+<div class="contact-form fade-up">
 
-        <form class="js-contact-form" action="https://formsubmit.co/Info@sdgcontracts.com" method="POST" novalidate>
+  <div id="form-success-message" style="display:none; background:rgba(140,198,63,0.12); border:2px solid #8cc63f; border-radius:var(--radius-lg); padding:40px 32px; text-align:center;">
+    <div style="width:56px;height:56px;background:#8cc63f;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="white" width="28" height="28"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
+    <h3 style="font-family:var(--font-head); font-size:20px; font-weight:800; margin-bottom:10px; color:var(--charcoal);">Message Sent!</h3>
+    <p style="font-size:14px; color:var(--gray-text); line-height:1.7;">Thanks for reaching out — we'll get back to you within 1 business day.<br />Need something sooner? Call us at <a href="tel:6133639166" style="color:var(--green-dark); font-weight:600;">613-363-9166</a>.</p>
+  </div>
+
+  <div id="contact-form-content">
+    <h3 style="font-family:var(--font-head); font-size:20px; font-weight:800; margin-bottom:8px;">Send Us a Message</h3>
+    <p style="font-size:14px; color:var(--gray-text); margin-bottom:28px;">Fill out the form below and we'll get back to you within 1 business day.</p>
+
+    <form class="js-contact-form" action="https://formsubmit.co/Info@sdgcontracts.com" method="POST" novalidate>
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
           <input type="hidden" name="_subject" value="New website contact form submission" />
           <input type="hidden" name="_captcha" value="false" />
@@ -254,7 +264,8 @@
           </button>
         </form>
       </div>
-
+    </div>
+  
     </div>
   </div>
 </section>
@@ -348,5 +359,18 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+  if (new URLSearchParams(window.location.search).get('sent') === '1') {
+    var formContent = document.getElementById('contact-form-content');
+    var successMsg = document.getElementById('form-success-message');
+    if (formContent && successMsg) {
+      formContent.style.display = 'none';
+      successMsg.style.display = 'block';
+      successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    // Clean the URL so a refresh doesn't re-show the message
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+</script>
 </body>
 </html>
